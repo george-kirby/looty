@@ -16,8 +16,6 @@ const ParrotImage = () => (
 );
 
 export async function getStaticProps() {
-  console.log("🚀 ~ file: index.js ~ line 19 ~ getStaticProps ~ getStaticProps")
-  console.log(loots)
   return {
     props: {
       allLootsData: loots
