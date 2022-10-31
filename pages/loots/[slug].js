@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link';
 import Layout from '../../components/layout';
-import loots from '../../data/loots'
+import loots from '../../data/lootsData'
 
 export async function getStaticPaths() {
     // Return a list of possible value for id
@@ -23,14 +23,14 @@ export async function getStaticProps({ params }) {
     };
   }
 
-export default function Loot( { name, description } ) {
+export default function Loot( { title, description } ) {
     return (
         <Layout>
             <Head>
-                <title>{ name + " | Find Treasure" }</title>
+                <title>{ title + " | Find Treasure" }</title>
             </Head>
             <main>
-                <h1>{ name }</h1>
+                <h1>{ title }</h1>
                 <p>{ description }</p>
                 <p>Too scared of the snakes? Go back <Link href="/">Home</Link>, you scurvy dog</p>
             </main>
