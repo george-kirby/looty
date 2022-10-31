@@ -1,17 +1,18 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
 import Link from 'next/link';
+import Layout from '../../components/layout';
+
 
 export default function EmeraldIsle() {
     return (
-        <div className={styles.container}>
+        <Layout>
             <Head>
                 <title>Emerald Isle | Find Treasure</title>
             </Head>
             <main>
-                    <h1>Emerald Isle</h1>
-                    <p>Too scared of the snakes? Go back <Link href="/">Home</Link>, you scurvy dog</p>
-                </main>
-        </div>
+                <h1>Emerald Isle</h1>
+                <p>Too scared of the snakes? Go back <Link href="/">Home</Link>, you scurvy dog</p>
+            </main>
+        </Layout>
     )
 }
