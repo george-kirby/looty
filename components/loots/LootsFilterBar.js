@@ -80,7 +80,7 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
             </div>
             <div className="distance-input"></div>
             <div className="dangers-inputs">
-                <p>Any dangers you can't face?</p>
+                <p>Any dangers that are too much for you?</p>
                 {allDangers.map((danger, index) => {
                     return (
                         <FormControlLabel key={index} control={<Checkbox />} label={danger} onChange={(event, value) => toggleDanger(danger, value)} />                

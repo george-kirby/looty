@@ -10,20 +10,19 @@ export const siteTitle = 'Looty';
 export default function Layout({ home }) {
   return (
       <header className={styles.header}>
-        {home ? (
+        {home && (
           <>
             <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
-        ) : (
-          <>
-            <Link href="/">
-                <h2>{siteTitle}</h2>
-            </Link>
-          </>
-          )}
+        )}
         <div className={headerStyles.menu}>
-          <Link href="/loots">Loots</Link>
-          <Link href="/about">About</Link>
+          {home || <Link href="/" className={styles.homeLink}>
+                {siteTitle}
+            </Link>}
+          <div className={styles.right}>
+            <Link href="/loots">Loots</Link>
+            <Link href="/about">About</Link>
+          </div>
         </div>
       </header>
   );

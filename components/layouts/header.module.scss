@@ -1,6 +1,14 @@
 .menu {
     display: flex;
-    a {
-        margin: 0 2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+    .right {
+        a {
+            margin: 0 2rem;
+        }
     }
+
+.homeLink {
+    color: gold
 }
