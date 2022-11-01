@@ -36,7 +36,9 @@ export default function Loot( { title, description, dangers } ) {
             </Head>
             <main>
                 <h1>{ title }</h1>
+                {/* image */}
                 <p>{ description }</p>
+                {/* TODO fix hydration issue, selections can be random */}
                 {/* <p>Too scared of the <b>{getRandomItem(dangers)}</b>? Run on <Link href="/">home</Link>, you {getRandomItem(insults)}!</p> */}
                 <p>Too scared? Run on <Link href="/">home</Link>, landlubber!</p>
             </main>

@@ -3,11 +3,14 @@ import { Checkbox, FormControl, FormControlLabel, Input, Button } from '@mui/mat
 
 
 export default function LootsFilterBar( { allLootsData, activeFilters, setActiveFilters } ) {
+
+    const highestValue = allLootsData.map(loot => loot.value).sort((a, b) => b - a)[0]
+    const highestDistance = allLootsData.map(loot => loot.distance).sort((a, b) => b - a)[0]
     
     const [minValueField, setMinValueField] = useState(0)
-    const [maxValueField, setMaxValueField] = useState(10000)
+    const [maxValueField, setMaxValueField] = useState(highestValue)
     const [minDistanceField, setMinDistanceField] = useState(0)
-    const [maxDistanceField, setMaxDistanceField] = useState(1000)
+    const [maxDistanceField, setMaxDistanceField] = useState(highestDistance)
 
 
     const [allDangers, setAllDangers] = useState(() => {
@@ -60,18 +63,18 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
     return (
         <div>
             <div className="value-input">
-                <p>What value of loot are you looking for?</p>
+                <p>What value of loot are you looking for? (dubloons)</p>
                 <div className="value-inputs-container">
-                    <Input type="number" value={minValueField} min="0" max="10000" label="Min value (dubloons)" onChange={handleMinValueChange} />
-                    <Input type="number" value={maxValueField} min="0" max="10000" label="Max value (dubloons)" onChange={handleMaxValueChange} />
+                    <Input type="number" value={minValueField} min="0" max={highestValue} label="Min value (dubloons)" onChange={handleMinValueChange} />
+                    <Input type="number" value={maxValueField} min="0" max={highestValue} label="Max value (dubloons)" onChange={handleMaxValueChange} />
                     <Button variant="contained" type="submit" onClick={applyValueFilter}>Apply</Button>
                 </div>
             </div>
             <div className="distance-input">
-                <p>How far will you sail?</p>
+                <p>How far will you sail? (nautical miles)</p>
                 <div className="distance-inputs-container">
-                    <Input type="number" value={minDistanceField} min="0" max="1000" label="Min distance (nautical miles)" onChange={handleMinDistanceChange} />
-                    <Input type="number" value={maxDistanceField} min="0" max="1000" label="Max distance (nautical miles)" onChange={handleMaxDistanceChange} />
+                    <Input type="number" value={minDistanceField} min="0" max={highestDistance} label="Min distance (nautical miles)" onChange={handleMinDistanceChange} />
+                    <Input type="number" value={maxDistanceField} min="0" max={highestDistance} label="Max distance (nautical miles)" onChange={handleMaxDistanceChange} />
                     <Button variant="contained" type="submit" onClick={applyDistanceFilter}>Apply</Button>
                 </div>
             </div>
