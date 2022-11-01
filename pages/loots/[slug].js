@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 import loots from '../../data/lootsData'
+import insults from '../../data/insults'
 
 export async function getStaticPaths() {
     // Return a list of possible value for id
@@ -23,7 +24,11 @@ export async function getStaticProps({ params }) {
     };
   }
 
-export default function Loot( { title, description } ) {
+export default function Loot( { title, description, dangers } ) {
+    const getRandomItem = array => {
+        return array[[Math.floor(Math.random()*array.length)]]
+    }
+
     return (
         <Layout>
             <Head>
@@ -32,7 +37,8 @@ export default function Loot( { title, description } ) {
             <main>
                 <h1>{ title }</h1>
                 <p>{ description }</p>
-                <p>Too scared of the snakes? Go back <Link href="/">Home</Link>, you scurvy dog</p>
+                {/* <p>Too scared of the <b>{getRandomItem(dangers)}</b>? Run on <Link href="/">home</Link>, you {getRandomItem(insults)}!</p> */}
+                <p>Too scared? Run on <Link href="/">home</Link>, landlubber!</p>
             </main>
         </Layout>
     )

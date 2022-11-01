@@ -69,6 +69,7 @@ export default function LootsIndex( { allLootsData }) {
     return (
         <Layout>
             <main>
+                <h1>Find loots</h1>
             <LootsFilterBar { ...{ allLootsData, activeFilters, setActiveFilters } }/>
             <FormControl size="small">
                 <InputLabel>Sort</InputLabel>

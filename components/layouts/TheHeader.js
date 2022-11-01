@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
+import headerStyles from './header.module.scss';
 import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
 
@@ -19,7 +20,11 @@ export default function Layout({ home }) {
                 <h2>{siteTitle}</h2>
             </Link>
           </>
-        )}
+          )}
+        <div className={headerStyles.menu}>
+          <Link href="/loots">Loots</Link>
+          <Link href="/about">About</Link>
+        </div>
       </header>
   );
 }
