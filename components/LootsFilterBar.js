@@ -62,21 +62,17 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
             <div className="value-input">
                 <p>What value of loot are you looking for?</p>
                 <div className="value-inputs-container">
-                    <FormControl>
-                        <Input type="number" min="0" max="10000" label="Min value (dubloons)" onChange={handleMinValueChange} />
-                        <Input type="number" min="0" max="10000" label="Max value (dubloons)" onChange={handleMaxValueChange} />
-                        <Button variant="contained" type="submit" onClick={applyValueFilter}>Apply</Button>
-                    </FormControl>
+                    <Input type="number" value={minValueField} min="0" max="10000" label="Min value (dubloons)" onChange={handleMinValueChange} />
+                    <Input type="number" value={maxValueField} min="0" max="10000" label="Max value (dubloons)" onChange={handleMaxValueChange} />
+                    <Button variant="contained" type="submit" onClick={applyValueFilter}>Apply</Button>
                 </div>
             </div>
             <div className="distance-input">
                 <p>How far will you sail?</p>
                 <div className="distance-inputs-container">
-                    <FormControl>
-                        <Input type="number" min="0" max="1000" label="Min distance (nautical miles)" onChange={handleMinDistanceChange} />
-                        <Input type="number" min="0" max="1000" label="Max distance (nautical miles)" onChange={handleMaxDistanceChange} />
-                        <Button variant="contained" type="submit" onClick={applyDistanceFilter}>Apply</Button>
-                    </FormControl>
+                    <Input type="number" value={minDistanceField} min="0" max="1000" label="Min distance (nautical miles)" onChange={handleMinDistanceChange} />
+                    <Input type="number" value={maxDistanceField} min="0" max="1000" label="Max distance (nautical miles)" onChange={handleMaxDistanceChange} />
+                    <Button variant="contained" type="submit" onClick={applyDistanceFilter}>Apply</Button>
                 </div>
             </div>
             <div className="distance-input"></div>
