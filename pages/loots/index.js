@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState, useEffect } from "react"
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import Layout from '../../components/layouts/layout';
@@ -68,6 +69,9 @@ export default function LootsIndex( { allLootsData }) {
 
     return (
         <Layout>
+            <Head>
+                <title>Looty | Explore rumoured loots</title>
+            </Head>
             <main>
                 <h1>Find loots</h1>
             <LootsFilterBar { ...{ allLootsData, activeFilters, setActiveFilters } }/>

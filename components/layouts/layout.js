@@ -12,7 +12,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Looty</title>
+        <title>Looty | Hunt for buried treasure</title>
         <link rel="icon" href="/treasure-chest-favicon.png" />
         <meta
           name="description"
