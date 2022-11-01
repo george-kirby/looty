@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import Layout from '../../components/layout';
-import LootCardsList from '../../components/LootCardsList';
-import LootsFilterBar from '../../components/LootsFilterBar';
+import Layout from '../../components/layouts/layout';
+import LootCardsList from '../../components/loots/LootCardsList';
+import LootsFilterBar from '../../components/loots/LootsFilterBar';
 
 import loots from '../../data/lootsData'
 

@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
+import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
+
+import TheHeader from './TheHeader'
 
 export const siteTitle = 'Looty';
 
@@ -25,32 +27,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images\ParrotPirate.svg"
-              height={144}
-              width={144}
-              alt=""
-            />
-            <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-                <Image
-                  priority
-                  src="/images\ParrotPirate.svg"
-                  height={108}
-                  width={108}
-                  alt=""
-                />
-            </Link>
-          </>
-        )}
-      </header>
+      <TheHeader { ...{ home } }/>
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>

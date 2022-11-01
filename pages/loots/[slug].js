@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
 import loots from '../../data/lootsData'
 
 export async function getStaticPaths() {
