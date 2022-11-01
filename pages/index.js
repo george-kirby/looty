@@ -4,9 +4,6 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link';
 import loots from '../data/lootsData'
 import Layout from '../components/layouts/layout';
-import utilStyles from '../styles/utils.module.css';
-
-import LootCardsList from '../components/loots/LootCardsList';
 
 const ParrotImage = () => (
   <Image
@@ -29,17 +26,17 @@ export default function Home({ allLootsData }) {
   return (
     <Layout home>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Looty!
-        </h1>
 
         <ParrotImage />
-
-        <p>Jump right in by searching for treasure on <Link href="/loots/emerald-isle">Emerald Isle</Link></p>
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Known loots</h2>
-          <LootCardsList loots={allLootsData} />
-        </section>
+      <p>Ahoy there, me hearty! Welcome aboard the <i>Black Perl</i>. I'm Captain . Allow me to explain what you see before you.</p>
+      <p>Over the years I've gathered clues on a number of the treasure troves scattered across the Sunset Sea. 
+        Buried in the earth and tucked in hidden caves, they're rumoured to hold riches beyond your wildest dreams!</p>
+        
+        <p>The thing is, the years have gotten to me and these old wings can't make me soar like they used to. 
+        But it'd be a shame to let these jottings go to waste. Perhaps they'd be of use to a young adventurer like yourself?
+        </p>
+        <p>You can start nearby on <Link href="/loots/diamond-isle">Diamond Isle</Link></p>
+        <p>Or, if you'd rather consider your options, take yer pick from <Link href="/loots">the whole list</Link>!</p>
       </main>
     </Layout>
   )
