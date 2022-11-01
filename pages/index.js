@@ -36,7 +36,8 @@ export default function Home({ allLootsData }) {
         But it'd be a shame to let these jottings go to waste. Perhaps they'd be of use to a young adventurer like yourself?
         </p>
         <p>You can start nearby on <Link href="/loots/diamond-isle">Diamond Isle</Link></p>
-        <p>Or, if you'd rather consider your options, take yer pick from <Link href="/loots">the whole list</Link>!</p>
+        <p>If you'd rather consider your options, take yer pick from <Link href="/loots">the whole list</Link>!</p>
+        <p>Or you can read a bit more <Link href="/about">about this place</Link>.</p>
       </main>
     </Layout>
   )

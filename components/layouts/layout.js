@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import TheHeader from './TheHeader'
 
-export const siteTitle = 'Looty';
+const siteTitle = 'Looty';
 
 export default function Layout({ children, home }) {
   return (
