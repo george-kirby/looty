@@ -18,7 +18,7 @@ export default function LootCard( { loot } ) {
                 /> */}
                 <h3>{loot.title}</h3>
                 <ul>
-                    <li>{loot.distance} km</li>
+                    <li>{loot.distance} miles</li>
                     <li>{loot.value} dubloons</li>
                 </ul>
                 <ul className="dangers-list">

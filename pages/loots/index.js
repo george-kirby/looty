@@ -16,29 +16,28 @@ export async function getStaticProps() {
 export default function LootsIndex( { allLootsData }) {
     const [activeFilters, setActiveFilters] = useState({
         minValue: 0,
-        maxValue: null,
+        maxValue: 10000,
         minDistance: 0,
-        maxDistance: null,
+        maxDistance: 1000,
         unwantedDangers: []
     });
-    const [unwantedDangers, setUnwantedDangers] = useState([]);
     const [filteredLoots, setFilteredLoots] = useState(allLootsData);
 
     useEffect(() => {
+        console.log("useEffect triggered")
         const newFilteredLoots = allLootsData.filter(loot => {
-            const dangersOk = !loot.dangers.some(danger => unwantedDangers.includes(danger))
-            return dangersOk
+            const valueOk = (loot.value >= activeFilters.minValue) && (loot.value <= activeFilters.maxValue)
+            const dangersOk = !loot.dangers.some(danger => activeFilters.unwantedDangers.includes(danger))
+            return (valueOk && dangersOk)
             // return dangersOk && distanceOk && valueOk
         })
         setFilteredLoots(newFilteredLoots)
-        // when LootsFilterBar applies changes for all filters, not just unwantedDangers
-        // }, [newFilters]);
-        }, [unwantedDangers]);
+        }, [activeFilters]);
 
     return (
         <Layout>
             <main>
-            <LootsFilterBar { ...{ allLootsData, activeFilters, setActiveFilters, unwantedDangers, setUnwantedDangers } }/>
+            <LootsFilterBar { ...{ allLootsData, activeFilters, setActiveFilters } }/>
             <LootCardsList loots={filteredLoots} />
 
             </main>
