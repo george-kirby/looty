@@ -6,6 +6,8 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
     
     const [minValueField, setMinValueField] = useState(0)
     const [maxValueField, setMaxValueField] = useState(10000)
+    const [minDistanceField, setMinDistanceField] = useState(0)
+    const [maxDistanceField, setMaxDistanceField] = useState(1000)
 
 
     const [allDangers, setAllDangers] = useState(() => {
@@ -27,8 +29,19 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
     }
 
     const applyValueFilter = () => {
-        console.log("running applyValueFilter")
         setActiveFilters({...activeFilters, minValue: minValueField, maxValue: maxValueField})
+    }
+
+    const handleMinDistanceChange = (event) => {
+        setMinDistanceField(parseInt(event.target.value) || 0)
+    }
+
+    const handleMaxDistanceChange = (event) => {
+        setMaxDistanceField(parseInt(event.target.value) || 1000)
+    }
+
+    const applyDistanceFilter = () => {
+        setActiveFilters({...activeFilters, minDistance: minDistanceField, maxDistance: maxDistanceField})
     }
 
     const toggleDanger = (danger, value) => {
@@ -54,12 +67,21 @@ export default function LootsFilterBar( { allLootsData, activeFilters, setActive
                         <Input type="number" min="0" max="10000" label="Max value (dubloons)" onChange={handleMaxValueChange} />
                         <Button variant="contained" type="submit" onClick={applyValueFilter}>Apply</Button>
                     </FormControl>
-
+                </div>
+            </div>
+            <div className="distance-input">
+                <p>How far will you sail?</p>
+                <div className="distance-inputs-container">
+                    <FormControl>
+                        <Input type="number" min="0" max="1000" label="Min distance (nautical miles)" onChange={handleMinDistanceChange} />
+                        <Input type="number" min="0" max="1000" label="Max distance (nautical miles)" onChange={handleMaxDistanceChange} />
+                        <Button variant="contained" type="submit" onClick={applyDistanceFilter}>Apply</Button>
+                    </FormControl>
                 </div>
             </div>
             <div className="distance-input"></div>
             <div className="dangers-inputs">
-                <p>What dangers can't you face?</p>
+                <p>Any dangers you can't face?</p>
                 {allDangers.map((danger, index) => {
                     return (
                         <FormControlLabel key={index} control={<Checkbox />} label={danger} onChange={(event, value) => toggleDanger(danger, value)} />                

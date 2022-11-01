@@ -27,9 +27,9 @@ export default function LootsIndex( { allLootsData }) {
         console.log("useEffect triggered")
         const newFilteredLoots = allLootsData.filter(loot => {
             const valueOk = (loot.value >= activeFilters.minValue) && (loot.value <= activeFilters.maxValue)
+            const distanceOk = (loot.distance >= activeFilters.minDistance) && (loot.distance <= activeFilters.maxDistance)
             const dangersOk = !loot.dangers.some(danger => activeFilters.unwantedDangers.includes(danger))
-            return (valueOk && dangersOk)
-            // return dangersOk && distanceOk && valueOk
+            return (valueOk && distanceOk && dangersOk)
         })
         setFilteredLoots(newFilteredLoots)
         }, [activeFilters]);
