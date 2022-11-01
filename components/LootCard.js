@@ -8,8 +8,8 @@ export default function LootCard( { loot } ) {
             <Image
               priority
               src={image.src}
-              height={144}
-              width={144}
+              height={20}
+              width={20}
               alt={image.alt}
             />
             <h3>{loot.title}</h3>
