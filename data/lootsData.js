@@ -23,30 +23,39 @@ const loots = [
     },
     {
         id: 3,
-        title: "Jade Isle",
-        slug: "jade-isle",
-        dangers: ["unknown"],
-        distance: 500,
-        value: 10,
-        description: "Why even bother? So far away for such little wealth! Unless there's more than meets the eye..."
+        title: "Sapphire Isle",
+        slug: "sapphire-isle",
+        dangers: ["quicksand", "snakes"],
+        distance: 50,
+        value: 100,
+        description: "Looks like a great deal"
     },
     {
         id: 4,
-        title: "Jade Isle",
-        slug: "jade-isle",
-        dangers: ["unknown"],
-        distance: 500,
-        value: 10,
-        description: "Why even bother? So far away for such little wealth! Unless there's more than meets the eye..."
+        title: "Diamond Isle",
+        slug: "diamond-isle",
+        dangers: ["dodos"],
+        distance: 25,
+        value: 20,
+        description: "Bit of a misleading name"
     },
     {
         id: 5,
-        title: "Jade Isle",
-        slug: "jade-isle",
-        dangers: ["unknown"],
-        distance: 500,
-        value: 10,
-        description: "Why even bother? So far away for such little wealth! Unless there's more than meets the eye..."
+        title: "Ruby Isle",
+        slug: "ruby-isle",
+        dangers: ["version incompatibility"],
+        distance: 150,
+        value: 1000,
+        description: "Something more valuable than gems...documentation!"
+    },
+    {
+        id: 6,
+        title: "Pirate Isle",
+        slug: "pirate-isle",
+        dangers: ["snakes", "pirates"],
+        distance: 200,
+        value: 750,
+        description: "Best keep your wits about you!"
     },
 ]
 
